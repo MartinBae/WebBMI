@@ -1,0 +1,53 @@
+<!doctype html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>BMI Calculator</title>
+
+
+</head>
+
+<h1>BMI Calculator</h1>
+
+<body>
+
+<div class="main">
+	<form class="pure-form" method="POST" action="/">
+	Weight in kgs:<br>
+	<input type="text" name="weight"><br>
+	Height in cms:<br>
+	<input type="text" name="height"><br>
+	<button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
+	</form>
+</div>
+
+<br>
+
+<div class="main">
+	{% if bmi %}
+	
+	    <p>
+        {% print("Your weight is {} kg." .format(weight)) %}
+		</p>
+		<p>
+        {% print("Your height is {} centimeters." .format(height)) %}
+		</p>
+		<p>
+			{% if bmi <= 19.8%}
+				{% print("eat more")%}
+			{% elif bmi <= 24.9%}
+				{% print("just perfect")%}
+			{% elif bmi <=29.9%}
+				{% print("oppsi fat boy")%}
+			{% else %}
+				{% print("do a diet") %}
+			{% endif %}
+		</p>
+        {% print("Your BMI is {}.".format(bmi)) %}
+        </p>
+	{% endif %}
+</div>
+
+</body>
